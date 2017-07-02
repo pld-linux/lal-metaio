@@ -9,8 +9,11 @@ Source0:	http://software.ligo.org/lscsoft/source/lalsuite/lalmetaio-%{version}.t
 # Source0-md5:	5222898eebfc05dbddeba2d63c64d336
 Patch0:		%{name}-env.patch
 URL:		https://wiki.ligo.org/DASWG/LALSuite
+BuildRequires:	autoconf >= 2.63
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	lal-devel >= 6.18.0
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool >= 2:2
 BuildRequires:	metaio-devel
 BuildRequires:	octave-devel >= 1:3.2.0
 BuildRequires:	pkgconfig
@@ -130,7 +133,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/liblalmetaio.so
+%attr(755,root,root) %{_libdir}/liblalmetaio.so
 %{_includedir}/lal/LALMetaIO*.h
 %{_includedir}/lal/LIGOLwXML*.h*
 %{_includedir}/lal/LIGOMetadata*.h
