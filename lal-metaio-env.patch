@@ -1,0 +1,14 @@
+--- lalmetaio-1.3.1/Makefile.am.orig	2015-03-27 05:14:39.000000000 +0100
++++ lalmetaio-1.3.1/Makefile.am	2017-07-02 15:26:28.881391280 +0200
+@@ -23,11 +23,6 @@
+ user_environment = \
+ 	set $(PACKAGE)_PREFIX $(prefix); \
+ 	set $(PACKAGE)_DATADIR $(pkgdatadir); \
+-	prepend MANPATH $(mandir); \
+-	prepend OCTAVE_PATH $(octexecdir); \
+-	prepend PATH $(bindir); \
+-	prepend PKG_CONFIG_PATH $(libdir)/pkgconfig; \
+-	prepend PYTHONPATH $(pyexecdir) $(pythondir); \
+ 	$(END_OF_LIST)
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
