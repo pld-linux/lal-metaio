@@ -1,12 +1,12 @@
 Summary:	LAL wrapping of the MetaIO LIGO_LW XML library
 Summary(pl.UTF-8):	Obudowanie LAL do biblioteki MetaIO LILO_LW XML
 Name:		lal-metaio
-Version:	1.3.1
+Version:	1.5.1
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://software.ligo.org/lscsoft/source/lalsuite/lalmetaio-%{version}.tar.xz
-# Source0-md5:	5222898eebfc05dbddeba2d63c64d336
+# Source0-md5:	1d8ff0a20f32f023854779dcbc317885
 Patch0:		%{name}-env.patch
 URL:		https://wiki.ligo.org/DASWG/LALSuite
 BuildRequires:	autoconf >= 2.63
@@ -123,10 +123,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README
+%doc AUTHORS README.md
 %attr(755,root,root) %{_bindir}/lalmetaio_version
 %attr(755,root,root) %{_libdir}/liblalmetaio.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblalmetaio.so.5
+%attr(755,root,root) %ghost %{_libdir}/liblalmetaio.so.7
 /etc/shrc.d/lalmetaio-user-env.csh
 /etc/shrc.d/lalmetaio-user-env.fish
 /etc/shrc.d/lalmetaio-user-env.sh
