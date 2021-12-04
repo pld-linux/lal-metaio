@@ -1,12 +1,12 @@
 Summary:	LAL wrapping of the MetaIO LIGO_LW XML library
 Summary(pl.UTF-8):	Obudowanie LAL do biblioteki MetaIO LILO_LW XML
 Name:		lal-metaio
-Version:	1.5.1
+Version:	2.0.3
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://software.ligo.org/lscsoft/source/lalsuite/lalmetaio-%{version}.tar.xz
-# Source0-md5:	1d8ff0a20f32f023854779dcbc317885
+# Source0-md5:	01b35a9b283ff8e9b614e0c0db3a2245
 Patch0:		%{name}-env.patch
 URL:		https://wiki.ligo.org/DASWG/LALSuite
 BuildRequires:	autoconf >= 2.63
@@ -17,8 +17,8 @@ BuildRequires:	libtool >= 2:2
 BuildRequires:	metaio-devel
 BuildRequires:	octave-devel >= 1:3.2.0
 BuildRequires:	pkgconfig
-BuildRequires:	python-devel >= 1:2.6
-BuildRequires:	python-numpy-devel >= 1:1.7
+BuildRequires:	python3-devel
+BuildRequires:	python3-numpy-devel
 BuildRequires:	swig >= 3.0.12
 BuildRequires:	swig-python >= 2.0.12
 BuildRequires:	tar >= 1:1.22
@@ -72,18 +72,18 @@ Octave interface for LAL MetaIO.
 %description -n octave-lalmetaio -l pl.UTF-8
 Interfejs Octave do biblioteki LAL MetaIO.
 
-%package -n python-lalmetaio
+%package -n python3-lalmetaio
 Summary:	Python bindings for LAL MetaIO
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki LAL MetaIO
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python-lal >= 6.18.0
-Requires:	python-modules >= 1:2.6
+Requires:	python3-lal >= 6.18.0
+Requires:	python3-modules >= 1:2.6
 
-%description -n python-lalmetaio
+%description -n python3-lalmetaio
 Python bindings for LAL MetaIO.
 
-%description -n python-lalmetaio -l pl.UTF-8
+%description -n python3-lalmetaio -l pl.UTF-8
 Wiązania Pythona do biblioteki LAL MetaIO.
 
 %prep
@@ -113,8 +113,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/etc/shrc.d
 %{__mv} $RPM_BUILD_ROOT%{_sysconfdir}/*sh $RPM_BUILD_ROOT/etc/shrc.d
 
-%py_postclean
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -126,7 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README.md
 %attr(755,root,root) %{_bindir}/lalmetaio_version
 %attr(755,root,root) %{_libdir}/liblalmetaio.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblalmetaio.so.7
+%attr(755,root,root) %ghost %{_libdir}/liblalmetaio.so.8
 /etc/shrc.d/lalmetaio-user-env.csh
 /etc/shrc.d/lalmetaio-user-env.fish
 /etc/shrc.d/lalmetaio-user-env.sh
@@ -150,8 +148,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/octave/*/site/oct/*/lalmetaio.oct
 
-%files -n python-lalmetaio
+%files -n python3-lalmetaio
 %defattr(644,root,root,755)
-%dir %{py_sitedir}/lalmetaio
-%attr(755,root,root) %{py_sitedir}/lalmetaio/_lalmetaio.so
-%{py_sitedir}/lalmetaio/*.py[co]
+%dir %{py3_sitedir}/lalmetaio
+%attr(755,root,root) %{py3_sitedir}/lalmetaio/_lalmetaio.so
+%{py3_sitedir}/lalmetaio/*.py
+%{py3_sitedir}/lalmetaio/__pycache__
