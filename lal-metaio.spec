@@ -1,30 +1,32 @@
 Summary:	LAL wrapping of the MetaIO LIGO_LW XML library
 Summary(pl.UTF-8):	Obudowanie LAL do biblioteki MetaIO LILO_LW XML
 Name:		lal-metaio
-Version:	2.0.3
-Release:	3
+Version:	3.0.2
+Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://software.ligo.org/lscsoft/source/lalsuite/lalmetaio-%{version}.tar.xz
-# Source0-md5:	01b35a9b283ff8e9b614e0c0db3a2245
+Source0:	http://software.igwn.org/lscsoft/source/lalsuite/lalmetaio-%{version}.tar.xz
+# Source0-md5:	1945005fd8c8ed10f1f3ad88bf0480df
 Patch0:		%{name}-env.patch
-URL:		https://wiki.ligo.org/DASWG/LALSuite
+URL:		https://wiki.ligo.org/Computing/DASWG/LALSuite
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	lal-devel >= 6.18.0
+BuildRequires:	help2man
+BuildRequires:	lal-devel >= 7.2.2
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2
-BuildRequires:	metaio-devel
+BuildRequires:	metaio-devel >= 8.4.0
 BuildRequires:	octave-devel >= 1:3.2.0
 BuildRequires:	pkgconfig
-BuildRequires:	python3-devel
-BuildRequires:	python3-numpy-devel
-BuildRequires:	swig >= 3.0.12
+BuildRequires:	python3-devel >= 1:3.5
+BuildRequires:	python3-numpy-devel >= 1:1.7
+BuildRequires:	swig >= 4.1.0
 BuildRequires:	swig-python >= 2.0.12
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
-Requires:	lal >= 6.18.0
+Requires:	lal >= 7.2.2
+Requires:	metaio >= 8.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,8 +40,8 @@ Summary:	Header files for lal-metaio library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki lal-metaio
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	lal-devel >= 6.18.0
-Requires:	metaio-devel
+Requires:	lal-devel >= 7.2.2
+Requires:	metaio-devel >= 8.4.0
 
 %description devel
 Header files for lal-metaio library.
@@ -78,7 +80,7 @@ Summary(pl.UTF-8):	Wiązania Pythona do biblioteki LAL MetaIO
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python3-lal >= 6.18.0
-Requires:	python3-modules >= 1:2.6
+Requires:	python3-modules >= 1:3.5
 
 %description -n python3-lalmetaio
 Python bindings for LAL MetaIO.
@@ -124,10 +126,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README.md
 %attr(755,root,root) %{_bindir}/lalmetaio_version
 %attr(755,root,root) %{_libdir}/liblalmetaio.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblalmetaio.so.8
+%attr(755,root,root) %ghost %{_libdir}/liblalmetaio.so.10
 /etc/shrc.d/lalmetaio-user-env.csh
 /etc/shrc.d/lalmetaio-user-env.fish
 /etc/shrc.d/lalmetaio-user-env.sh
+%{_mandir}/man1/lalmetaio_version.1*
 
 %files devel
 %defattr(644,root,root,755)
