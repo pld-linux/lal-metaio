@@ -81,6 +81,7 @@ Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python3-lal >= 6.18.0
 Requires:	python3-modules >= 1:3.5
+Obsoletes:	python-lalmetaio < 2
 
 %description -n python3-lalmetaio
 Python bindings for LAL MetaIO.
