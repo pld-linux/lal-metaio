@@ -66,7 +66,7 @@ Summary:	Octave interface for LAL MetaIO
 Summary(pl.UTF-8):	Interfejs Octave do biblioteki LAL MetaIO
 Group:		Applications/Math
 Requires:	%{name} = %{version}-%{release}
-Requires:	octave-lal >= 6.18.0
+Requires:	octave-lal >= 7.2.2
 
 %description -n octave-lalmetaio
 Octave interface for LAL MetaIO.
@@ -79,7 +79,7 @@ Summary:	Python bindings for LAL MetaIO
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki LAL MetaIO
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python3-lal >= 6.18.0
+Requires:	python3-lal >= 7.2.2
 Requires:	python3-modules >= 1:3.5
 Obsoletes:	python-lalmetaio < 2
 
