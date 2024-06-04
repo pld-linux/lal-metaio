@@ -1,7 +1,7 @@
---- lalmetaio-1.3.1/Makefile.am.orig	2015-03-27 05:14:39.000000000 +0100
-+++ lalmetaio-1.3.1/Makefile.am	2017-07-02 15:26:28.881391280 +0200
-@@ -23,11 +23,6 @@
- user_environment = \
+--- lalmetaio-4.0.4/Makefile.am.orig	2024-06-04 18:56:42.790285372 +0200
++++ lalmetaio-4.0.4/Makefile.am	2024-06-04 18:57:03.636839103 +0200
+@@ -26,11 +26,6 @@ user_environment = \
+ 	trailingcolon MANPATH; \
  	set $(PACKAGE)_PREFIX $(prefix); \
  	set $(PACKAGE)_DATADIR $(pkgdatadir); \
 -	prepend MANPATH $(mandir); \

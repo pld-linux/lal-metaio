@@ -1,18 +1,18 @@
 Summary:	LAL wrapping of the MetaIO LIGO_LW XML library
 Summary(pl.UTF-8):	Obudowanie LAL do biblioteki MetaIO LILO_LW XML
 Name:		lal-metaio
-Version:	3.0.2
+Version:	4.0.4
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://software.igwn.org/lscsoft/source/lalsuite/lalmetaio-%{version}.tar.xz
-# Source0-md5:	1945005fd8c8ed10f1f3ad88bf0480df
+# Source0-md5:	ed22d14d02e7ed5b846a62826b44866b
 Patch0:		%{name}-env.patch
 URL:		https://wiki.ligo.org/Computing/LALSuite
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	help2man
-BuildRequires:	lal-devel >= 7.2.2
+BuildRequires:	help2man >= 1.37
+BuildRequires:	lal-devel >= 7.5.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2
 BuildRequires:	metaio-devel >= 8.4.0
@@ -25,7 +25,7 @@ BuildRequires:	swig-python >= 3.0.11
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
-Requires:	lal >= 7.2.2
+Requires:	lal >= 7.5.0
 Requires:	metaio >= 8.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -66,7 +66,7 @@ Summary:	Octave interface for LAL MetaIO
 Summary(pl.UTF-8):	Interfejs Octave do biblioteki LAL MetaIO
 Group:		Applications/Math
 Requires:	%{name} = %{version}-%{release}
-Requires:	octave-lal >= 7.2.2
+Requires:	octave-lal >= 7.5.0
 
 %description -n octave-lalmetaio
 Octave interface for LAL MetaIO.
@@ -79,7 +79,7 @@ Summary:	Python bindings for LAL MetaIO
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki LAL MetaIO
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python3-lal >= 7.2.2
+Requires:	python3-lal >= 7.5.0
 Requires:	python3-modules >= 1:3.5
 Obsoletes:	python-lalmetaio < 2
 
@@ -127,7 +127,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README.md
 %attr(755,root,root) %{_bindir}/lalmetaio_version
 %attr(755,root,root) %{_libdir}/liblalmetaio.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblalmetaio.so.10
+%attr(755,root,root) %ghost %{_libdir}/liblalmetaio.so.11
 /etc/shrc.d/lalmetaio-user-env.csh
 /etc/shrc.d/lalmetaio-user-env.fish
 /etc/shrc.d/lalmetaio-user-env.sh
