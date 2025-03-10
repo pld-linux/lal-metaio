@@ -2,7 +2,7 @@ Summary:	LAL wrapping of the MetaIO LIGO_LW XML library
 Summary(pl.UTF-8):	Obudowanie LAL do biblioteki MetaIO LILO_LW XML
 Name:		lal-metaio
 Version:	4.0.4
-Release:	1
+Release:	
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://software.igwn.org/lscsoft/source/lalsuite/lalmetaio-%{version}.tar.xz
